@@ -11,7 +11,7 @@ int confirm_1st(int* answer, int* mine);
 void main(void)
 {
 	//로또번호(오름차순 정렬)
-	int answer_number[6] = {2, 3, 8, 11, 15, 41};
+	int answer_number[6] = { 2, 3, 8, 11, 15, 41 };
 	//자신이 기입한 번호(오름차순 정렬)
 	int mynumber[6] = { 2, 3, 8, 11, 15, 41 };
 
@@ -25,14 +25,9 @@ int confirm_1st(int* answer, int* mine)
 	int cnt = 0;
 
 	for (int i = 0; i < 6; i++) {
-		if (answer[i] == mine[i])
-			cnt++;
-		else
-			break;
+		if (answer[i] != mine[i])
+			return 0;
 	}
 
-	if (cnt == 6)
-		return 1;
-	else
-		return 0;
+	return 1;
 }
